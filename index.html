@@ -60,19 +60,29 @@
 	</head>
 	<body >
 		<center>
-		</br>
+		 </br>
 			<div id="login">login</div>
 	        </br></br></br>
-			<div id="back">
-		    </br></br>
-			<input type="text" class="username" required="required" placeholder="Username" name="userid"></input> 
-		    </br></br></br>
-	        <input type="password" class="password" required="required"  placeholder="Password" name="pswrd"></input>
-		    </br></br></br>
-		    <div id="in">
-		    <input type=button value="login"style="color:white;background-color:#db1a15;">
-		    </div>
-		</center>
-	</div>
+			  <div id="back">
+		      </br></br>
+		         <form>
+			        <input type="text" class="username" required="required" placeholder="Username" name="username"></input> 
+		            </br></br></br>
+	                <input type="password" class="password" required="required"  placeholder="Password" name="password"></input>
+		            </br></br></br>
+		            <div id="in">
+		            <input type="button" onclick="disp_prompt()" value="login"style="color:white;background-color:#db1a15;"/>
+		            </div>
+                 </from>
+		      </div>
+				<script language="javascript"> 
+			        function disp_prompt()
+			       {
+					  alert("登录成功！！")
+			       }
+      
+         
+</script>
+</center>
 	</body>
 </html>

@@ -76,6 +76,44 @@
                  </from>
 		      </div>
 				<script language="javascript"> 
+					window.alert = function(str){
+        var shield = document.createElement("DIV");
+        shield.id = "shield";  
+         shield.style.position = "absolute";  
+         shield.style.left = "0px";  
+         shield.style.top = "0px";  
+         shield.style.width = "100%";  
+         shield.style.height = document.body.scrollHeight+"px";
+        var alertFram = document.createElement("DIV");
+        alertFram.id="alertFram";  
+         alertFram.style.position = "absolute";  
+         alertFram.style.left = "50%";  
+         alertFram.style.top = "50%";  
+         alertFram.style.marginLeft = "-225px";  
+         alertFram.style.marginTop = "-75px";  
+         alertFram.style.width = "400px";  
+         alertFram.style.height = "200px";  
+         alertFram.style.background = "red";  
+         alertFram.style.textAlign = "center";  
+         alertFram.style.lineHeight = "150px";  
+         alertFram.style.zIndex = "300";  
+        strHtml = "<ul style=\"list-style:none; margin:0px; padding:0px ;width:100%\">\n";
+        strHtml += " <li style=\"background:red; text-align:center;font-size:16px;font-weight:bold;height:60px;line-height:54px;border:1px solid #655545;color:black\">DiveCoders提示框</li>\n";
+        strHtml += " <li style=\"background:#efeded;text-align:center;font-size:18px;height:180px; padding-top:20px;line-height:70px;border-left:1px solid #655545;border-right:1px solid red;color:red\">"+str+"</li>\n";
+        strHtml += " <li style=\"background:#efeded;text-align:center;font-weight:bold;height:60px;line-height:25px; border:1px solid #655545;\"><input type=\"button\" value=\"确 定\" onclick=\"doOk()\" style=\"width:80px;height:35px;background:#efeded;color:red;background:black;border:1px solid ;font-size:16px;line-height:15px;outline:none;margin-top: 10px\"/></li>\n";
+        strHtml += "</ul>\n";
+        alertFram.innerHTML = strHtml;
+        document.body.appendChild(alertFram);
+        document.body.appendChild(shield);
+        this.doOk = function(){
+            alertFram.style.display = "none";
+            shield.style.display = "none";
+        }
+        alertFram.focus();
+        document.body.onselectstart = function(){return false;};
+    }
+    </script>
+    <script>
 			        function disp_prompt(form)
 			       {
 					  if(form.username.value==""||form.word.value=="")
@@ -83,7 +121,7 @@
         		alert("请输入您的用户名及密码！");
         		form.reset();
         	}
-            else if((form.username.value=="zxy"&& form.word.value =="204582")||(form.userid.value=="hjz"&& form.pswrd.value=="ngdsb"))
+            else if((form.username.value=="zxy"&& form.word.value =="204582")||(form.username.value=="hjz"&& form.word.value=="ngdsb"))
             {
                 alert("登录成功！");
                 form.reset();

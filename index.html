@@ -68,20 +68,33 @@
 		         <form>
 			        <input type="text" class="username" required="required" placeholder="Username" name="username"></input> 
 		            </br></br></br>
-	                <input type="password" class="password" required="required"  placeholder="Password" name="password"></input>
+	                <input type="password" class="password" required="required"  placeholder="Password" name="word"></input>
 		            </br></br></br>
 		            <div id="in">
-		            <input type="button" onclick="disp_prompt()" value="login"style="color:white;background-color:#db1a15;"/>
+		            <input type="button" onclick="disp_prompt(form)" value="login"style="color:white;background-color:#db1a15;"/>
 		            </div>
                  </from>
 		      </div>
 				<script language="javascript"> 
-			        function disp_prompt()
+			        function disp_prompt(form)
 			       {
-					  alert("登录成功！！")
+					  if(form.username.value==""||form.word.value=="")
+        	{
+        		alert("请输入您的用户名及密码！");
+        		form.reset();
+        	}
+            else if((form.username.value=="zxy"&& form.word.value =="204582")||(form.userid.value=="hjz"&& form.pswrd.value=="ngdsb"))
+            {
+                alert("登录成功！");
+                form.reset();
+            }
+            else
+            {
+                alert("(您输入的用户名或密码不正确！)");
+                form.reset(); 
+            }
+
 			       }
-      
-         
 </script>
 </center>
 	</body>
